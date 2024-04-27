@@ -55,5 +55,5 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* [Skybox]([https://github.com/matiassingers/awesome-readme](https://skybox.blockadelabs.com/))
+* [Skybox](https://skybox.blockadelabs.com/)
 
