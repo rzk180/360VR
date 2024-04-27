@@ -12,14 +12,15 @@ def open_new_page(selected_device_address):
     root.destroy()
     subprocess.run(["python", "test.py", str(selected_device_address)])
 
-
+# Scan les appareils bluetooth disponibles et les retournes dans une liste
 def scan_devices():
     nearby_devices = discover_devices()
-    device_list.delete(0, tk.END)  # Effacer la liste actuelle
+    device_list.delete(0, tk.END)  # Efface la liste actuelle
     for addr in nearby_devices:
         device_name = lookup_name(addr)
         device_list.insert(tk.END, device_name)
 
+# Se connecte à l'appareil souhaité et retourne son adresse bluetooth
 def connect_to_device():
     selected_device_index = device_list.curselection()
     if selected_device_index:
@@ -36,7 +37,7 @@ def connect_to_device():
     else:
         messagebox.showerror("Error", "Please select a device from the list.")
 
-image_path_entry = 'back.jpg'
+image_path = 'back.jpg'
 
 # Création de la fenêtre principale
 root = tk.Tk()
