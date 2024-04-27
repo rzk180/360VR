@@ -1,6 +1,6 @@
 # 360VR
 
-a small project to create and edite 360 image for VRh headset with just a vocal prompt
+a small project to create and edite 360 image for VRh headset with just a vocal prompt.
 
 ## Description
 
@@ -35,10 +35,10 @@ command to run if program contains helper info
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Thomas Razafimbahoaka
+Tom Gimat
+Rayan malandrin
+Amaury rebillard
 
 ## Version History
 
@@ -50,7 +50,7 @@ ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
