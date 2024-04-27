@@ -35,10 +35,10 @@ command to run if program contains helper info
 
 ## Authors
 
-Thomas Razafimbahoaka
-Tom Gimat
-Rayan malandrin
-Amaury rebillard
+* Thomas Razafimbahoaka
+* Tom Gimat
+* Rayan malandrin
+* Amaury rebillard
 
 ## Version History
 
