@@ -5,7 +5,7 @@ a small project to create and edite 360 image for VRh headset with just a vocal 
 ## Description
 
 An in-depth paragraph about your project and overview of use.
-<br \> ![Mon image](52867729005_c384100298_o.jpg)
+<br> ![Mon image](52867729005_c384100298_o.jpg)
 
 
 ## Getting Started
