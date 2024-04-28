@@ -10,7 +10,7 @@ import subprocess
 
 def open_new_page(selected_device_address):
     root.destroy()
-    subprocess.run(["python", "test.py", str(selected_device_address)])
+    subprocess.run(["python", "createOrEdit.py", str(selected_device_address)])
 
 # Scan les appareils bluetooth disponibles et les retournes dans une liste
 def scan_devices():
