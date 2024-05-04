@@ -13,7 +13,11 @@ speech -> text -> image -> 360 image building -> local data -> VR headset data -
 ### Dependencies
 
 * Data avaibility, VR headset, internet connection
-* pyhton
+* pyhton request library
+
+```
+ python -m pip install requests
+```
 
 ### Installing
 
