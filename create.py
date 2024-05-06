@@ -1,8 +1,10 @@
 import tkinter as tk
-from tkinter import messagebox
+from PIL import Image, ImageTk
+from tkinter import messagebox, ttk
 from bluetooth import *
 from PyOBEX.client import Client
 import subprocess
+import os
 
 def talk_to_image():
     # code pour parler et générer les images mettre la fonction send_image_to_device à la fin de la fonction pour un envoi automatique
@@ -39,14 +41,31 @@ def send_image_to_device():
 if __name__ == "__main__":
     device_address = sys.argv[1]
     
-    # Création de la fenêtre principale
+    # Création de la fenêtre principale    
     root = tk.Tk()
-    root.title("Créer un espace VR")
+    root.title("360VR")
+    root.geometry("1024x740") 
+    root.resizable(False, False) 
+    root.iconphoto(True, ImageTk.PhotoImage(Image.open(os.getcwd()+"\\images\\assets\\custom_icon.png")))
+    
+
+    background_image = Image.open(os.getcwd()+"\\images\\assets\\background.jpg")  
+    background_photo = ImageTk.PhotoImage(background_image)
+    background_label = tk.Label(root, image=background_photo)
+    background_label.image = background_photo
+    background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
     # Bouton pour parler
-    send_button = tk.Button(root, text="Parler", command=talk_to_image)
-    send_button.grid(row=2, column=0, columnspan=2, padx=10, pady=5)
+    talk_frame = tk.Frame(root, bg="white")
+    talk_frame.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+
+    # Bouton pour valider et générer l'image
+    send_button = ttk.Button(talk_frame, text="Parler", command=talk_to_image, style="Custom.TButton")
+    send_button.pack()
 
 
-    # Affichage de la fenêtre
+    root.style = ttk.Style()
+    root.style.configure("Custom.TButton", foreground="black", background="#0078D4", font=("Helvetica", 28), padding=10)
+
+
     root.mainloop()

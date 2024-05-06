@@ -1,8 +1,10 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox,ttk
 from bluetooth import *
 from PyOBEX.client import Client
+from PIL import Image, ImageTk
 import subprocess
+import os
 
 def list_files(folder_path):
     # Vérifie si le chemin spécifié est un dossier
@@ -52,19 +54,32 @@ if __name__ == "__main__":
     # Création de la fenêtre principale
     root = tk.Tk()
     root.title("Liste des fichiers")
+    root.geometry("1024x740") 
+    root.resizable(False, False) 
+    root.iconphoto(True, ImageTk.PhotoImage(Image.open(os.getcwd()+"\\images\\assets\\custom_icon.png")))
+
+
+    background_image = Image.open(os.getcwd()+"\\images\\assets\\background.jpg") 
+    background_photo = ImageTk.PhotoImage(background_image)
+    background_label = tk.Label(root, image=background_photo)
+    background_label.image = background_photo
+    background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
     # Chemin du dossier contenant les fichiers
-    folder_path = '' # Mettre le chemin du dossier dans lequel seront stockés les images
+    folder_path = os.getcwd()+'\\images' # Mettre le chemin du dossier dans lequel seront stockés les images
 
     # Création de la liste 
     files_listbox = tk.Listbox(root)
     files_listbox.grid(row=0, column=0, padx=10, pady=5, sticky="nsew")
+    files_listbox.place(relx=0.5, rely=0.4, anchor=tk.CENTER)
     for file_name in list_files(folder_path):
         files_listbox.insert(tk.END, file_name)
-
+    
     # Bouton pour envoyer l'image
-    send_button = tk.Button(root, text="Send Image", command=send_image_to_device)
-    send_button.grid(row=3, column=0, columnspan=2, padx=10, pady=5)
+    send_button = ttk.Button(root, text="Send Image", style="Custom.TButton", command=send_image_to_device)
+    send_button.grid(row=1, column=0, padx=10, pady=5,sticky="nsew")
+    send_button.place(relx=0.5, rely=0.6, anchor=tk.CENTER)
+    root.style = ttk.Style()
+    root.style.configure("Custom.TButton", foreground="black", background="#0078D4", font=("Helvetica", 28), padding=10)
 
-    # Affichage de la fenêtre
     root.mainloop()

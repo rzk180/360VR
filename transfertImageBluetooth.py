@@ -1,12 +1,9 @@
-# Installer les modules pybluez, obex
-# Commandes 'pip install pybluez'. Si échec de l'installation il faut utiliser 'pip install git+https://github.com/pybluez/pybluez.git#egg=pybluez'. Module Obex 'pip install PyOBEX'
-# Changer le chemin d'accès de l'image et l'adresse bluetooth de l'appareil. Si le chemin d'accès est le nom de l'image alors ne rien changer d'autre, sinon si c'est un chemin sous la forme /chemin/vers/le/ficher.jpg alors il faut remplacer image.path dans la fonction put() par le nom du fichier.
-
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, ttk
 from bluetooth import *
-from PyOBEX.client import Client
+from PIL import ImageTk, Image
 import subprocess
+import os
 
 def open_new_page(selected_device_address):
     root.destroy()
@@ -37,11 +34,17 @@ def connect_to_device():
     else:
         messagebox.showerror("Error", "Please select a device from the list.")
 
-image_path = 'back.jpg'
-
 # Création de la fenêtre principale
 root = tk.Tk()
 root.title("Bluetooth Image Sender")
+root.geometry("1024x740") 
+root.resizable(False, False) 
+root.iconphoto(True, ImageTk.PhotoImage(Image.open(os.getcwd()+"\\images\\assets\\custom_icon.png")))  
+
+# Charger et afficher une image en arrière-plan
+background_image = ImageTk.PhotoImage(Image.open(os.getcwd()+"\\images\\assets\\background.jpg"))
+background_label = tk.Label(root, image=background_image)
+background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Liste des appareils Bluetooth
 device_list = tk.Listbox(root)
@@ -52,12 +55,17 @@ scrollbar = tk.Scrollbar(root, orient="vertical", command=device_list.yview)
 scrollbar.grid(row=0, column=1, padx=0, pady=5, sticky="ns")
 device_list.config(yscrollcommand=scrollbar.set)
 
-# Bouton pour actualiser la liste des appareils
-scan_button = tk.Button(root, text="Scan Devices", command=scan_devices)
+# Bouton pour actualiser la liste des appareils avec le style Windows 11
+scan_button = ttk.Button(root, text="Scan Devices", command=scan_devices, style="W.TButton")
 scan_button.grid(row=1, column=0, padx=10, pady=5)
 
-# Bouton pour se connecter à l'appareil sélectionné
-connect_button = tk.Button(root, text="Connect", command=connect_to_device)
+# Définition du style Windows 11 pour le bouton Scan Devices
+root.style = ttk.Style()
+root.style.configure("W.TButton", foreground="black", background="#0078D4", font=("Helvetica", 12, "bold"), padding=10)
+
+# Bouton pour se connecter à l'appareil sélectionné avec le style Windows 11
+connect_button = ttk.Button(root, text="Connect", command=connect_to_device, style="W.TButton")
 connect_button.grid(row=2, column=0, padx=10, pady=5)
 
+# Boucle principale pour l'affichage de la fenêtre
 root.mainloop()
