@@ -25,9 +25,9 @@ if __name__ == "__main__":
     root.title("Créer ou Modifier")
     root.geometry("1024x740") 
     root.resizable(False, False) 
-    root.iconphoto(True, ImageTk.PhotoImage(Image.open(os.getcwd()+"\\images\\assets\\custom_icon.png")))
+    root.iconphoto(True, ImageTk.PhotoImage(Image.open(os.getcwd()+"\\src\\images\\assets\\custom_icon.png")))
 
-    background_image = Image.open(os.getcwd()+"\\images\\assets\\background.jpg")  
+    background_image = Image.open(os.getcwd()+"\\src\\images\\assets\\background.jpg")  
     background_photo = ImageTk.PhotoImage(background_image)
     background_label = tk.Label(root, image=background_photo)
     background_label.image = background_photo

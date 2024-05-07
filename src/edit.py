@@ -56,17 +56,17 @@ if __name__ == "__main__":
     root.title("Liste des fichiers")
     root.geometry("1024x740") 
     root.resizable(False, False) 
-    root.iconphoto(True, ImageTk.PhotoImage(Image.open(os.getcwd()+"\\images\\assets\\custom_icon.png")))
+    root.iconphoto(True, ImageTk.PhotoImage(Image.open(os.getcwd()+"\\src\\images\\assets\\custom_icon.png")))
 
 
-    background_image = Image.open(os.getcwd()+"\\images\\assets\\background.jpg") 
+    background_image = Image.open(os.getcwd()+"\\src\\images\\assets\\background.jpg") 
     background_photo = ImageTk.PhotoImage(background_image)
     background_label = tk.Label(root, image=background_photo)
     background_label.image = background_photo
     background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
     # Chemin du dossier contenant les fichiers
-    folder_path = os.getcwd()+'\\images\\generated' # Mettre le chemin du dossier dans lequel seront stockés les images
+    folder_path = os.getcwd()+'\\src\\images\\generated' # Mettre le chemin du dossier dans lequel seront stockés les images
 
     # Création de la liste 
     files_listbox = tk.Listbox(root)
