@@ -66,7 +66,7 @@ if __name__ == "__main__":
     background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
     # Chemin du dossier contenant les fichiers
-    folder_path = os.getcwd()+'\\images' # Mettre le chemin du dossier dans lequel seront stockés les images
+    folder_path = os.getcwd()+'\\images\\generated' # Mettre le chemin du dossier dans lequel seront stockés les images
 
     # Création de la liste 
     files_listbox = tk.Listbox(root)

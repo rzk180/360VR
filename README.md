@@ -44,8 +44,8 @@ command to run if program contains helper info
 
 * Thomas Razafimbahoaka
 * Tom Gimat
-* Rayan malandrin
-* Amaury rebillard
+* Rayan Malandain
+* Amaury Rebillard
 
 ## Version History
 
