@@ -5,8 +5,11 @@ a small project to create and edite 360 image for VRh headset with just a vocal 
 ## Description
 
 speech -> text -> image -> 360 image building -> local data -> VR headset data -> VR display
-<br> ![Mon image](52867729005_c384100298_o.jpg)
+  
+![image](https://github.com/rzk180/360VR/assets/83363955/425f879e-3425-48e1-94d4-60ce451aec4a)
+(image compressé a 60%)  
 
+-------------------------------------
 
 ## Getting Started
 
