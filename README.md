@@ -27,7 +27,7 @@ This project seamlessly integrates several stages of data processing. It begins 
 ### Installing
 
 ```
-git clone lien
+git clone https://github.com/rzk180/360VR.git
 ```
 
 ### Executing program
