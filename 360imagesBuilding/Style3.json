@@ -1,0 +1,132 @@
+[
+    {
+        "id": 77,
+        "name": "M3 Above the Clouds",
+        "description": "Mid-sky perspectives that emphasize photoreal clouds"
+    },
+    {
+        "id": 121,
+        "name": "M3 Above the Clouds (Featured)",
+        "description": "Mid-sky perspectives that emphasize photoreal clouds"
+    },
+    {
+        "id": 82,
+        "name": "M3 Advanced (artistic)",
+        "description": "No style help - best for pro users to build their own artistic style prompts from scratch"
+    },
+    {
+        "id": 112,
+        "name": "M3 Advanced (photo/render)",
+        "description": "No style help - best for pro users to build their own realistic style prompts from scratch"
+    },
+    {
+        "id": 74,
+        "name": "M3 Americana Painting",
+        "description": "Oil painting style evoking early 20th century American painters"
+    },
+    {
+        "id": 81,
+        "name": "M3 Anime",
+        "description": "Bright and cheery Japanese animation style"
+    },
+    {
+        "id": 85,
+        "name": "M3 Comic",
+        "description": "Cell-shaded illustration style with clean lines and bright colors"
+    },
+    {
+        "id": 87,
+        "name": "M3 Digital Painting",
+        "description": "Digitally illustrated concept art good for almost any subject matter"
+    },
+    {
+        "id": 120,
+        "name": "M3 Digital Painting (Featured)",
+        "description": "Digitally illustrated concept art good for almost any subject matter"
+    },
+    {
+        "id": 75,
+        "name": "M3 Dutch Masters",
+        "description": "Oil painting style evoking the golden era of Renaissance masterpieces"
+    },
+    {
+        "id": 95,
+        "name": "M3 Elegant Maximalism",
+        "description": "Extremely ornate and decorative style with flowing art and lots of detail"
+    },
+    {
+        "id": 122,
+        "name": "M3 Elegant Maximalism (Featured)",
+        "description": "Extremely ornate and decorative style with flowing art and lots of detail"
+    },
+    {
+        "id": 104,
+        "name": "M3 Grunge Pop",
+        "description": "Loose and gestural abstract painting style with tendencies toward modern art"
+    },
+    {
+        "id": 90,
+        "name": "M3 Neo Tokyo",
+        "description": "Classic cyberpunk manga style emphasizing line art and urban detailing"
+    },
+    {
+        "id": 89,
+        "name": "M3 Open World",
+        "description": "Pastel paintings of beautiful worlds begging to be explored"
+    },
+    {
+        "id": 67,
+        "name": "M3 Photoreal",
+        "description": "Photographic realism with a high degree of flexibility and good visual fidelity"
+    },
+    {
+        "id": 119,
+        "name": "M3 Photoreal (Featured)",
+        "description": "Photographic realism with a high degree of flexibility and good visual fidelity"
+    },
+    {
+        "id": 115,
+        "name": "M3 Playground",
+        "description": "Try out your wildest ideas here! This style is specifically tailored to create most anything"
+    },
+    {
+        "id": 123,
+        "name": "M3 \u200bPlayground (Featured)",
+        "description": "Try out your wildest ideas here! This style is specifically tailored to create most anything"
+    },
+    {
+        "id": 80,
+        "name": "M3 Psychedelic Illustration",
+        "description": "Colorful psychedelic layers of bold linework and imaginative themes"
+    },
+    {
+        "id": 88,
+        "name": "M3 Retro Fantasy",
+        "description": "Imaginative fantasy landscapes in the classic high-contrast painterly look of 1960s pulp art"
+    },
+    {
+        "id": 118,
+        "name": "M3 Retro Fantasy (Featured)",
+        "description": "Imaginative fantasy landscapes in the classic high-contrast painterly look of 1960s pulp art"
+    },
+    {
+        "id": 93,
+        "name": "M3 Scifi Concept Art",
+        "description": "Matte painting style focusing on futuristic and retrofuturistic themes"
+    },
+    {
+        "id": 114,
+        "name": "M3 Sky Dome",
+        "description": "Great for traditional skyboxes, featuring wide open reflected horizons and realistic rendering"
+    },
+    {
+        "id": 73,
+        "name": "M3 Storybook",
+        "description": "Nostalgic illustrated children's storybook emphasizing cute and pleasant scenes"
+    },
+    {
+        "id": 68,
+        "name": "M3 UHD Render",
+        "description": "Flexible realistic high fidelity CGI render style"
+    }
+]
