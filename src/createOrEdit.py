@@ -11,11 +11,11 @@ def open_new_page(newFile,selected_address):
 
 # Fonction appelée lors du clic sur le bouton "Créer"
 def create():
-    open_new_page("create.py",selected_address)
+    open_new_page("/src/create.py",selected_address)
 
 # Fonction appelée lors du clic sur le bouton "Modifier"
 def modify():
-    open_new_page("edit.py",selected_address)
+    open_new_page(os.getcwd()+"/src/edit.py",selected_address)
 
 if __name__ == "__main__":
     selected_address = sys.argv[1]
