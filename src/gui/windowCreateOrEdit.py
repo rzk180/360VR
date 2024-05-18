@@ -1,45 +1,43 @@
 from . import *
-
-def open_new_page(newFile,selected_address):
-    root.destroy()
-    subprocess.run(["python", newFile, str(selected_address)])
+from gui import windowCreate,windowEdit
 
 # Fonction appelée lors du clic sur le bouton "Créer"
-def create():
-    open_new_page("/src/create.py",selected_address)
+def create(root,selected_device_address):
+    windowCreate.main(root,selected_device_address)
 
 # Fonction appelée lors du clic sur le bouton "Modifier"
-def modify():
-    open_new_page(os.getcwd()+"/src/edit.py",selected_address)
+def modify(root,selected_device_address):
+    windowEdit.main(root,selected_device_address)
 
-def main():
-    selected_address = sys.argv[1]
+def raise_frame(frame):
+    frame.tkraise()
 
+def main(root,selected_device_address):
     # Création d'une interface simple
-    root = tk.Tk()
-    root.title("Créer ou Modifier")
-    root.geometry("1024x740") 
-    root.resizable(False, False) 
-    root.iconphoto(True, ImageTk.PhotoImage(Image.open(os.getcwd()+"\\src\\images\\assets\\custom_icon.png")))
 
-    background_image = Image.open(os.getcwd()+"\\src\\images\\assets\\background.jpg")  
-    background_photo = ImageTk.PhotoImage(background_image)
-    background_label = tk.Label(root, image=background_photo)
-    background_label.image = background_photo
+    frame2 = tk.Frame(root)
+    frame2.grid(row=0, column=0, sticky="nsew")
+
+    background_image = ImageTk.PhotoImage(Image.open(DIRIMAGE + "background.jpg"))
+    background_label = tk.Label(frame2, image=background_image)
+    
     background_label.place(x=0, y=0, relwidth=1, relheight=1)
+    background_label.image = background_image
+
+    raise_frame(frame2)
 
     root.style = ttk.Style()
     root.style.configure("Custom.TButton", foreground="black", background="#0078D4", font=("Helvetica", 28), padding=10)
 
     # Bouton pour créer
-    create_button = ttk.Button(root, text="Créer",style="Custom.TButton", command=create)
+    create_button = ttk.Button(frame2, text="Créer",style="Custom.TButton", command=lambda:create(root,selected_device_address))
     create_button.place(relx=0.5, rely=0.4, anchor=tk.CENTER)
 
     # Bouton pour modifier
-    modify_button = ttk.Button(root, text="Modifier",style="Custom.TButton", command=modify)
+    modify_button = ttk.Button(frame2, text="Modifier",style="Custom.TButton", command=lambda:modify(root,selected_device_address))
     modify_button.place(relx=0.5, rely=0.6, anchor=tk.CENTER)
 
-    root.mainloop()
+    print(selected_device_address)
 
 if __name__ == "__main__":
     print("blalbalalnjoeznafi erzgui")

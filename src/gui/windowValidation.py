@@ -7,20 +7,18 @@ def send_image_to_device():
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {e}")
 
-if __name__ == "__main__":
-    # Création de la fenêtre principale
-    root = tk.Tk()
+def main(root):
+
     root.title("360VR")
-    root.geometry("1024x740")
-    root.resizable(False, False)
-    root.iconphoto(True, ImageTk.PhotoImage(Image.open(os.getcwd()+"\\src\\images\\assets\\custom_icon.png")))
+
     
     # Charger et afficher une image en arrière-plan
-    background_image = Image.open(os.getcwd()+"\\src\\images\\assets\\background.jpg")
-    background_photo = ImageTk.PhotoImage(background_image)
-    background_label = tk.Label(root, image=background_photo)
-    background_label.image = background_photo
+    frame5 = tk.Frame(root)
+    frame5.grid(row=0, column=0, sticky="nsew")
+    background_image = ImageTk.PhotoImage(Image.open(DIRIMAGE + "background.jpg"))
+    background_label = tk.Label(frame5, image=background_image) 
     background_label.place(x=0, y=0, relwidth=1, relheight=1)
+    background_label.image = background_image
  
     # Création du widget de texte et spécification de la taille
     T = tk.Text(root, height=5, width=52)
@@ -44,5 +42,6 @@ if __name__ == "__main__":
     # Insertion du texte dans le widget de texte
     T.insert(tk.END, "Veuillez regarder l'image sur l'appareil sélectionné")
  
-    # Boucle principale pour l'affichage de la fenêtre
-    root.mainloop()
+
+if __name__ == "__main__":
+    print("VOUS VENEZ DE GAGNER UN IPHONE 15 PRO !! Renseignez vos coordonnées bancaires pour réclamer votre gain. ")
