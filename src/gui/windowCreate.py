@@ -1,16 +1,8 @@
-import tkinter as tk
-from PIL import Image, ImageTk
-from tkinter import messagebox, ttk
-from bluetooth import *
 from PyOBEX.client import Client
-import subprocess
-import os
-from utils.speechToText import * 
+from . import *
 
 def talk_to_image():
     # code pour parler et générer les images mettre la fonction send_image_to_device à la fin de la fonction pour un envoi automatique
-    speech
-
     print("print a effacer c'est juste pour pas avoir une fonction vide")
 
 def send_image_to_device():

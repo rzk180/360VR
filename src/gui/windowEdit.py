@@ -1,10 +1,4 @@
-import tkinter as tk
-from tkinter import messagebox,ttk
-from bluetooth import *
-from PyOBEX.client import Client
-from PIL import Image, ImageTk
-import subprocess
-import os
+from . import *
 
 def list_files(folder_path):
     # Vérifie si le chemin spécifié est un dossier

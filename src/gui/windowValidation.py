@@ -1,7 +1,4 @@
-import tkinter as tk
-from tkinter import messagebox, ttk
-from PIL import Image, ImageTk
-import os
+from . import *
 
 def send_image_to_device():
     try:

@@ -1,9 +1,4 @@
-import subprocess
-import tkinter as tk
-from tkinter import ttk
-from PIL import Image, ImageTk
-import sys
-import os
+from . import *
 
 def open_new_page(newFile,selected_address):
     root.destroy()
@@ -17,7 +12,7 @@ def create():
 def modify():
     open_new_page(os.getcwd()+"/src/edit.py",selected_address)
 
-if __name__ == "__main__":
+def main():
     selected_address = sys.argv[1]
 
     # Création d'une interface simple
@@ -45,3 +40,6 @@ if __name__ == "__main__":
     modify_button.place(relx=0.5, rely=0.6, anchor=tk.CENTER)
 
     root.mainloop()
+
+if __name__ == "__main__":
+    print("blalbalalnjoeznafi erzgui")
