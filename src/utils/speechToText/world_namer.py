@@ -1,12 +1,11 @@
 from openai import OpenAI
 import datetime
 
-client = OpenAI()
-
 def generate_filename(text):
     prompt = f"Summarize this description into a short, coherent filename perfect for Windows directories: '{text}'. Keep the filename short and in English."
-    
-    response = client.chat.completions.create(
+
+    client = OpenAI()
+    gpt_response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
@@ -14,9 +13,14 @@ def generate_filename(text):
         ], 
 
     )
-    
-    filename = response.choices[0].message.content.strip().replace(' ', '_').replace('"', '')
+
+    filename = gpt_response.choices[0].message.content.strip().replace(' ', '_').replace('"', '')
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     full_filename = f"{filename}-{timestamp}.txt"
-    
+
     return full_filename
+
+
+
+
+
