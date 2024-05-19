@@ -1,0 +1,1 @@
+#Les fichiers de ce package servent à mettre à jour les styles et type disponible avec l'api skyblock.

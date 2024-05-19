@@ -1,7 +1,7 @@
 # src/utils/speechToText/speech_to_text.py
 
 from openai import OpenAI
-from utils.speechToText import world_namer
+import world_namer
 import speech_recognition as sr
 import os
 
