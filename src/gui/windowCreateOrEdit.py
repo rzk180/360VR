@@ -34,7 +34,7 @@ def main(root,selected_device_address):
     create_button.place(relx=0.5, rely=0.4, anchor=tk.CENTER)
 
     # Bouton pour modifier
-    modify_button = ttk.Button(frame2, text="Modifier",style="Custom.TButton", command=lambda:modify(root,selected_device_address))
+    modify_button = ttk.Button(frame2, text="Charger",style="Custom.TButton", command=lambda:modify(root,selected_device_address))
     modify_button.place(relx=0.5, rely=0.6, anchor=tk.CENTER)
 
     print(selected_device_address)
