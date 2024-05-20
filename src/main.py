@@ -1,5 +1,5 @@
 from gui import windowDeviceList
-from utils import *
+from imageGeneration import *
 import tkinter as tk
 from PIL import ImageTk, Image
 import os

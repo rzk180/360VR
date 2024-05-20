@@ -1,11 +1,13 @@
 # src/utils/speechToText/speech_to_text.py
 
 from openai import OpenAI
-import world_namer
+from . import world_namer
 import speech_recognition as sr
 import os
 
-client = OpenAI()
+client = OpenAI(
+    api_key="sk-proj-gVMH9XLDmjxz5eBqksueT3BlbkFJEptZnjbPtK8YazZH1wCX", 
+)
 
 
 #selection du micro

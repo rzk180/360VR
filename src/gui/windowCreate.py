@@ -1,6 +1,9 @@
 from PyOBEX.client import Client
-from utils.speechToText.speechToText import speak_and_transcribe
+from speechToText.speechToText import speak_and_transcribe
+from speechToText import world_namer
 from . import *
+from imageGeneration import chooseStyleV3
+from gui import windowValidation
 
 # var globales
 mic_waiting_image = None
@@ -12,21 +15,28 @@ button_image_id = None
 device_address = None
 
 
-def talk_to_image(canvas):
+def talk_to_text(canvas,root):
     global is_listening
 
     is_listening = True
     update_button_image(canvas)
 
     transcription = speak_and_transcribe()
-    print("Transcription:", transcription)
 
     is_listening = False
     update_button_image(canvas)
 
     # Appeler la fonction pour envoyer l'image après la transcription
-    send_image_to_device()
+    text_to_image(transcription,root)
 
+def text_to_image(prompt,root):
+    status = chooseStyleV3.main(prompt)
+    if status == "error":
+        messagebox.showerror("An error occured", f"Could not generate image")
+        root.destroy()
+    else:
+        send_image_to_device(status)
+        windowValidation.main(root)
 
 def update_button_image(canvas):
     if is_listening:
@@ -34,30 +44,27 @@ def update_button_image(canvas):
     else:
         canvas.itemconfig(button_image_id, image=mic_waiting_photo)
 
-def send_image_to_device():
+def send_image_to_device(path):
     try:
-        # Si nous avons l'adresse bluetooth de l'appareil ciblé alors on initialise une connexion OBEX
+        splitedPath = os.path.split(path)  
+        fileName = splitedPath[1]  
         if device_address:
             service_matches = find_service(name=b'OBEX Object Push\x00', address=device_address)
             if len(service_matches) == 0:
                 messagebox.showerror("Error", "Could not find the OBEX service.")
                 return
 
-            # Récupère les services et port disponibles
             first_match = service_matches[0]
             port = first_match["port"]
             host = first_match["host"]
             client = Client(host, port)
 
-            # Connexion à l'appareil ciblé et envoi de l'image
             client.connect()
-            with open(selected_file_name, 'rb') as file: #remplacer la variable selected_file_name par le chemin vers l'image généré
+            with open(path, 'rb') as file:
                 image_data = file.read()
-            client.put(selected_file_name, image_data) #remplacer la variable selected_file_name par le chemin vers l'image généré
+            client.put(fileName, image_data)
             client.disconnect()
 
-            root.destroy()
-            subprocess.run(["python", "validation.py"])
             messagebox.showinfo("Success", "Image sent successfully.")
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {e}")
@@ -100,11 +107,11 @@ def main(root, selected_device_address):
     canvas.image = mic_waiting_photo
 
     # Listener pour le bouton
-    canvas.bind("<Button-1>", lambda event: talk_to_image(canvas))
+    canvas.bind("<Button-1>", lambda event: talk_to_text(canvas,root))
     canvas.pack()
 
     # Bouton pour parler
-    # send_button = ttk.Button(talk_frame, text="Parler", command=talk_to_image, style="Custom.TButton")
+    # send_button = ttk.Button(talk_frame, text="Parler", command=talk_to_text, style="Custom.TButton")
     # send_button.pack()
 
 

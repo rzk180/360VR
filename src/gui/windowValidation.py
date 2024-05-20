@@ -1,12 +1,5 @@
 from . import *
 
-def send_image_to_device():
-    try:
-        # Votre code pour envoyer l'image à l'appareil sélectionné
-        pass
-    except Exception as e:
-        messagebox.showerror("Error", f"An error occurred: {e}")
-
 def main(root):
 
     root.title("360VR")
