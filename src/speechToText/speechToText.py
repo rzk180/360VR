@@ -5,9 +5,7 @@ from . import world_namer
 import speech_recognition as sr
 import os
 
-client = OpenAI(
-    api_key="sk-proj-gVMH9XLDmjxz5eBqksueT3BlbkFJEptZnjbPtK8YazZH1wCX", 
-)
+client = OpenAI()
 
 
 #selection du micro
