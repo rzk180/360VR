@@ -6,7 +6,7 @@ url = "https://backend.blockadelabs.com/api/v1/skybox/styles"
 payload = {}
 
 headers = {
-  'x-api-key': '36GshOAMRxms4v8PwRkE1ykBzkaZQecWPOYEcHHGr5unOEibCUfGpBmKoJZM'
+  'x-api-key': '{API_KEY}'
 }
 
 response = requests.request("GET", url, headers=headers, data=payload)

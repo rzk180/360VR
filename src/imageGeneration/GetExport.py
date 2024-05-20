@@ -4,7 +4,7 @@ from imageGeneration import UploadImageURL
 def main(id):
   url = "https://backend.blockadelabs.com/api/v1/skybox/export/" + id
   headers = {
-    "x-api-key": "36GshOAMRxms4v8PwRkE1ykBzkaZQecWPOYEcHHGr5unOEibCUfGpBmKoJZM",
+    "x-api-key": "{API_KEY}",
     "Content-Type": "application/json"
   }
   

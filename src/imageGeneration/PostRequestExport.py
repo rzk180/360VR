@@ -6,7 +6,7 @@ from imageGeneration import GetExport
 def check_status(id):
   url = "https://backend.blockadelabs.com/api/v1/skybox/export"
   headers = {
-    "x-api-key": "36GshOAMRxms4v8PwRkE1ykBzkaZQecWPOYEcHHGr5unOEibCUfGpBmKoJZM",
+    "x-api-key": "{API_KEY}",
     "Content-Type": "application/json"
   }
   data = {
@@ -41,7 +41,3 @@ def main(id):
   print(status)
   
   return GetExport.main(status)
-  
-if __name__ == "__main__":
-    response = main('ebaf8316cdcf23ddfecbd650f8380009')
-    print(response)

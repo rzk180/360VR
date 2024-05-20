@@ -7,7 +7,7 @@ def chat_gpt(prompt):
     url = "https://api.openai.com/v1/engines/text-davinci-003/completions"
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer sk-proj-OVwbFHSmAahojFbplHb1T3BlbkFJUI8ID5g5ztibeefMBUM0"
+        "Authorization": "{API_KEY}"
     }
     data = {
         "prompt": prompt,

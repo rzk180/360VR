@@ -9,7 +9,7 @@ import re
 
 
 def chat(prompt):
-    api_key = "sk-proj-o7wlHlEEarxaAxhIvQw8T3BlbkFJWpe3jBjnOnP4iiDvacvB"
+    api_key = "{API_KEY}"
     url = "https://api.openai.com/v1/completions"
 
     params = {

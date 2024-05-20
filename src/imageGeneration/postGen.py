@@ -5,7 +5,7 @@ def main(style_id,text):
 
   url = "https://backend.blockadelabs.com/api/v1/skybox"
   headers = {
-    "x-api-key": "36GshOAMRxms4v8PwRkE1ykBzkaZQecWPOYEcHHGr5unOEibCUfGpBmKoJZM",
+    "x-api-key": "{API_KEY}",
     "Content-Type": "application/json"
   }
   data = {
